@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pullpal_development
+    ports:
+      - "5433:5432"
+    networks:
+      - pullpal_network
+
+
+
+networks:
+  pullpal_network:
+    driver: bridge
